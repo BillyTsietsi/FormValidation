@@ -1,0 +1,38 @@
+<p>
+  registration works!
+</p>
+<form [formGroup] ="FormValid">
+   
+  <input formControlName ="name" [(ngModel)] ="name" placeholder="Name"> 
+  <span id="pcol" *ngIf = "!name"> Required</span> <br><br>
+ 
+ 
+  <input formControlName ="surname" [(ngModel)] ="surname" placeholder="Surname">
+  <span id="pcol" *ngIf = "!surname" > Required</span> <br><br>
+ 
+  
+  <input formControlName ="age" [(ngModel)] ="age" placeholder="Age" maxlength="3">
+  <span id="pcol" *ngIf = "!age"> Required</span><br><br>
+ 
+  
+  <input formControlName ="email" [(ngModel)] ="email" placeholder="Email" > 
+  <span id="pcol" *ngIf = "!email"> Required</span><br><br>
+ 
+  
+ 
+  <input formControlName ="number" [(ngModel)] ="number" placeholder="Contact Number" maxlength="10"> 
+  <span id="pcol" *ngIf = "!number"> Required</span> <br><br>
+ 
+  <button [disabled] ="!FormValid.valid"  (click)= "register()">Save</button>
+  </form> 
+ <br><br>
+ <div *ngIf = "nameButton" > 
+ <p>{{name}}</p>
+ <p>{{surname}}</p>
+ <p>{{age}}</p>
+ <p>{{email}}</p>
+ <p>{{number}}</p>
+ 
+   
+  
+ </div>
